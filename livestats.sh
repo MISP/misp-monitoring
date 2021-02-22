@@ -92,18 +92,19 @@ function show_menu() {
 	esac
     ;;
     l)  i=0
+        echo -e "\n"
 	for opt in "${LOGLIMITS[@]}"
 	do
-	  echo -e "\n[$i] $opt"
+	  echo -e "[$i] $opt"
 	  i=$((i+1))
-  done
+        done
 	read -p "Selection: " -n1 limit
 	case $limit in
 	  [0-9])  if [ -v LOGLIMITS[$limit] ]
 	          then
-		          LOGLIMIT=${LOGLIMITS[$limit]}
-              reset
-		        fi
+		    LOGLIMIT=${LOGLIMITS[$limit]}
+                    reset
+		  fi
 	  ;;
 	esac
     ;;
