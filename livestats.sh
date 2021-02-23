@@ -32,7 +32,7 @@ declare -A total
 # Hide Ctrl-C
 stty -echoctl
 
-# trap ctrl-c and call ctrl_c()
+# trap Ctrl-C and show menu
 trap show_menu INT
 
 ORDER="-r"
@@ -233,5 +233,5 @@ do
     echo -e "Scope:\t\t(none)"
   fi
   echo -e "Search:\t\t$LOGLIMIT"
-  echo -e "\n(refreshing in $INTERVAL seconds - CTRL-C for pause and options)"
+  echo -e "\n(refreshing in $INTERVAL seconds - Ctrl-C for pause and options)"
 done
